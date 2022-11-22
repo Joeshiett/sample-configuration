@@ -1,0 +1,13 @@
+  apiVersion: canaries.flanksource.com/v1
+  kind: Canary
+  metadata:
+    name: http-check
+  spec:
+    interval: 30
+    http:
+      - endpoint: http://status.savanttools.com/?code=200
+        thresholdMillis: 3000
+        responseCodes: [201, 200, 301]
+        responseContent: ""
+        maxSSLExpiry: 7
+
